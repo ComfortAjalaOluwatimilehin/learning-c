@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
         {
             "name": "(gdb) An Pipe anfügen",
             "type": "cppdbg",
@@ -30,10 +31,10 @@
             "name": "gcc.exe - Aktive Datei erstellen und debuggen",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "program": "C:\\MinGW\\bin\\gcc.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "cwd": "C:\\Users\\ajala\\practice\\c",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
