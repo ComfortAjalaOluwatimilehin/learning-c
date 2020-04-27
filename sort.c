@@ -1,38 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-static int compare(const void *a, const void *b)
+static int myCompare(const void *a, const void *b)
 {
 
+    // setting up rules for comparison
     return strcmp(*(const char **)a, *(const char **)b);
+}
+void sort(const char *arr[], int n)
+{
+    // calling qsort function to sort the array
+    // with the help of Comparator
+    qsort(arr, n, sizeof(const char *), myCompare);
 }
 
 int main()
 {
-    char *name[127]; // pointer variable which will hold a value of type 'char'. Thus name is an address => &name[0]
-    // https://stackoverflow.com/a/1088667/5386933
-    char *tmp[200][127] = {
-        "",
-    };
+    char src[40][127];
+    //what would happen if you used src[127]?
 
     int count = 0;
-    int i = 0, j;
     // scanf returns the number of values it was able to read
-    while (scanf("%s[^\n]", name) == 1)
+    while (scanf("%s[^\n]", src + count) == 1)
     {
-        tmp[count] = name;
 
         count = count + 1;
     }
-
-    int m;
-
-    //  qsort(array, n_array, sizeof(const char *), compare);
-
-    for (m = 0; m < 5; m++)
+    const char * names[count];
+    for (int i = 0; i < count; i++)
     {
-        printf("%i %s \n", m, tmp[m]);
+
+        names[i] = src[i];
+    }
+    int n = sizeof(names) / sizeof(names[0]);
+    sort(names, count);
+    for (int i = 0; i < count; i++)
+    {
+        fprintf(stdout,"%s\n", names[i]);
+        ///fprintf(stdout, "\n");
     }
     return 0;
 }

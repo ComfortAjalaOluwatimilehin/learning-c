@@ -2,9 +2,7 @@
 #include <string.h>
 int main()
 {
-    char name[10];
-    char filter = 'A';
-    // scanf returns the number of values it was able to read
+    char name[127];
     while (scanf("%s[^\n]", &name) == 1)
     {
 
