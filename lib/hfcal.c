@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "./includes/hfcal.h"
+#include "hfcal.h"
 void display_calories(float weight, float distance, float coeff)
 {
  printf("Weight: %3.2f lbs\n", weight);
